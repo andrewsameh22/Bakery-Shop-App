@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,7 +26,6 @@ class _NavHomeState extends State<NavHome> {
         var cubit = NavbarCubit.get(context);
         return SafeArea(
           child: Scaffold(
-
             backgroundColor: Colors.white,
             body: SingleChildScrollView(
               child: Column(
@@ -269,15 +267,28 @@ class _NavHomeState extends State<NavHome> {
                   //     },
                   //   ),
                   // )
-                  cubit.productCheck == 'All Bakeries'
-                      ? cubit.BuildBakeryCategory(category: products)
-                      : cubit.productCheck == 'Light Bakeries'
-                          ? cubit.BuildBakeryCategory(
-                              category: lightproducts.toList())
-                          : cubit.productCheck == 'Sweet Bakeries'
-                              ? cubit.BuildBakeryCategory(
-                                  category: sweetproducts.toList())
-                              : Container(),
+                  // cubit.productCheck == 'All Bakeries'
+                  //     ? cubit.BuildBakeryCategory(category: products)
+                  //     : cubit.productCheck == 'basic'
+                  //         ? cubit.BuildBakeryCategory(category: basic.toList())
+                  //         : cubit.productCheck == 'cheesecake'
+                  //             ? cubit.BuildBakeryCategory(
+                  //                 category: cheesecakes.toList())
+                  //             : cubit.productCheck == 'pancakes'
+                  //                 ? cubit.BuildBakeryCategory(
+                  //                     category: pancakes.toList())
+                  //                 : cubit.productCheck == 'donuts'
+                  //                     ? cubit.BuildBakeryCategory(
+                  //                         category: donuts.toList())
+                  //                     : cubit.productCheck == 'piesandtarts'
+                  //                         ? cubit.BuildBakeryCategory(
+                  //                             category: piesandtarts.toList())
+                  //                         : cubit.productCheck == 'cinnabon'
+                  //                             ? cubit.BuildBakeryCategory(
+                  //                                 category: cinnabons.toList())
+                  //                             : Container(),
+                  cubit.BuildBakeryCategory(
+                      category: cubit.ActiveProductsList.toList()),
                 ],
               ),
             ),
@@ -290,12 +301,20 @@ class _NavHomeState extends State<NavHome> {
 
 class PopItems {
   static const String all = 'All Bakeries';
-  static const String light = 'Light Bakeries';
-  static const String sweet = 'Sweet Bakeries';
+  static const String basic = 'Basic Bakeries';
+  static const String pancakes = 'Pancakes';
+  static const String cheesecakes = 'Cheesecakes';
+  static const String donuts = 'Donuts';
+  static const String piesandtarts = 'Pies and Tarts';
+  static const String cinnabon = 'Cinnabon';
 
   static const List<String> choices = <String>[
     all,
-    light,
-    sweet,
+    basic,
+    pancakes,
+    donuts,
+    piesandtarts,
+    cinnabon,
+    cheesecakes,
   ];
 }

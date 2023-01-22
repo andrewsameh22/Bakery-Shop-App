@@ -7,6 +7,7 @@ import '../business_logic/navbar/navbar_cubit.dart';
 import '../business_logic/navbar/navbar_state.dart';
 import '../styles/colours.dart';
 import '../styles/constants.dart';
+import 'bakery_model.dart';
 import 'cart_model.dart';
 
 class ProductTile extends StatelessWidget {

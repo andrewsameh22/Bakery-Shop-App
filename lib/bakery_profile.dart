@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'business_logic/navbar/navbar_cubit.dart';
 import 'business_logic/navbar/navbar_state.dart';
+import 'models/bakery_model.dart';
 import 'models/product_model.dart';
 
 class BakeryProfile extends StatefulWidget {

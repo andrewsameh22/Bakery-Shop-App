@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../bakery_profile.dart';
+import '../../models/bakery_model.dart';
 import '../../models/product_model.dart';
 import '../../navbar_screens/nav_cart.dart';
 import '../../navbar_screens/nav_home.dart';
@@ -37,6 +38,7 @@ class NavbarCubit extends Cubit<NavbarState> {
   }
 
   String productCheck = 'All Bakeries';
+  Iterable<Product> ActiveProductsList = products;
 
   int numOfItems = 1;
 
@@ -64,12 +66,37 @@ class NavbarCubit extends Cubit<NavbarState> {
   void choiceAction(String choice) {
     if (choice == PopItems.all) {
       productCheck = 'All Bakeries';
+      ActiveProductsList = products;
       emit(NavbarTest());
-    } else if (choice == PopItems.light) {
-      productCheck = 'Light Bakeries';
+    } else if (choice == PopItems.basic) {
+      productCheck = 'basic';
+      ActiveProductsList = basic;
+
       emit(NavbarTest());
-    } else if (choice == PopItems.sweet) {
-      productCheck = 'Sweet Bakeries';
+    } else if (choice == PopItems.cheesecakes) {
+      productCheck = 'cheesecake';
+      ActiveProductsList = cheesecakes;
+
+      emit(NavbarTest());
+    } else if (choice == PopItems.cinnabon) {
+      productCheck = 'cinnabon';
+      ActiveProductsList = cinnabons;
+
+      emit(NavbarTest());
+    } else if (choice == PopItems.donuts) {
+      productCheck = 'donuts';
+      ActiveProductsList = donuts;
+
+      emit(NavbarTest());
+    } else if (choice == PopItems.pancakes) {
+      productCheck = 'pancakes';
+      ActiveProductsList = pancakes;
+
+      emit(NavbarTest());
+    } else if (choice == PopItems.piesandtarts) {
+      productCheck = 'piesandtarts';
+      ActiveProductsList = piesandtarts;
+
       emit(NavbarTest());
     }
   }

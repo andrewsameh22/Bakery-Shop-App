@@ -8,6 +8,7 @@ import '../ResuableWidgets/default_button.dart';
 import '../bakery_profile.dart';
 import '../business_logic/navbar/navbar_cubit.dart';
 import '../business_logic/navbar/navbar_state.dart';
+import '../models/bakery_model.dart';
 import '../models/cart_model.dart';
 import '../models/product_model.dart';
 import '../navbar_screens/internal/buynow.dart';
