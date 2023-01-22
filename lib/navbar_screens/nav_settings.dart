@@ -79,12 +79,7 @@ class _NavSettingsState extends State<NavSettings> {
                       ),
                       onTap: () {
                         settingsCards[index].title != 'Logout'
-                            ? print('Logged Out')
-                            // Navigator.push(
-                            //         context,
-                            //         MaterialPageRoute(
-                            //           builder: (context) => settingsCards[index].DestScreen,
-                            //         ))
+                            ? print('')
                             : showDialog(
                                 context: context,
                                 builder: (context) {

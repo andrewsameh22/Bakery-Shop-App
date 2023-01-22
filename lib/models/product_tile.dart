@@ -50,6 +50,9 @@ class ProductTile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -75,56 +78,63 @@ class ProductTile extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.01,
+                      ),
                       Text(
+                        overflow: TextOverflow.ellipsis,
                         model.product.title,
                         maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: primaryColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                       ),
-                      Text(
-                        '\$' + model.product.price.toString(),
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            '\$' + model.product.price.toString(),
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.1,
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              model.counter > 1 ? model.counter-- : null;
+                              cubit.TotalPriceCalculator();
+                              cubit.emit(NavbarTest());
+                            },
+                            icon: Icon(Icons.remove),
+                            iconSize: 20.0,
+                          ),
+                          Text(
+                            model.counter.toString(),
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              model.counter++;
+                              cubit.TotalPriceCalculator();
+                              cubit.emit(NavbarTest());
+                            },
+                            icon: Icon(Icons.add),
+                            iconSize: 20.0,
+                          ),
+                        ],
                       ),
                     ],
                   ),
                   Spacer(),
-                  Row(
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {
-                          model.counter > 1 ? model.counter-- : null;
-                          cubit.TotalPriceCalculator();
-                          cubit.emit(NavbarTest());
-                        },
-                        icon: Icon(Icons.remove),
-                        iconSize: 20.0,
-                      ),
-                      Text(
-                        model.counter.toString(),
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          model.counter++;
-                          cubit.TotalPriceCalculator();
-                          cubit.emit(NavbarTest());
-                        },
-                        icon: Icon(Icons.add),
-                        iconSize: 20.0,
-                      ),
-                    ],
-                  ),
                   IconButton(
                     onPressed: () {
                       CartItems.remove(model);

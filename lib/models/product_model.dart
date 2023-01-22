@@ -167,7 +167,7 @@ List<Product> products = [
     // bakery: Mongini,
     bakeryName: 'Mongini',
     type: 'donuts',
-    title: "Chocolate and Sprinkles Donuts",
+    title: "Sprinkled Donuts",
     price: 6,
     description:
         "a type of food made from leavened fried dough. It is popular in many countries and is prepared in various forms as a sweet snack that can be homemade or purchased in bakeries, supermarkets, food stalls, and franchised specialty vendors with chocolate and sprinkles.",

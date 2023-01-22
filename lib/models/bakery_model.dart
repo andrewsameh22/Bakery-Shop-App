@@ -20,19 +20,19 @@ Bakery Exception = Bakery(
   listOfProducts: ExceptionProducts,
   rating: 'Excellent',
   ratingNum: 5,
-  image: "assets/images/exception.png",
+  image: "assets/images/brands/exception.png",
 );
 Bakery Etoile = Bakery(
   name: 'Etoile',
   listOfProducts: EtoileProducts,
   rating: 'Very Good',
   ratingNum: 4,
-  image: "assets/images/etoile.png",
+  image: "assets/images/brands/etoile.png",
 );
 Bakery Mongini = Bakery(
   name: 'Mongini',
   listOfProducts: MonginiProducts,
   rating: 'Good',
   ratingNum: 3,
-  image: "assets/images/monginis.png",
+  image: "assets/images/brands/monginis.png",
 );
