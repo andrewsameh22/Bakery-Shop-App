@@ -14,7 +14,6 @@ import '../../navbar_screens/nav_home.dart';
 import '../../navbar_screens/nav_orders.dart';
 import '../../navbar_screens/nav_settings.dart';
 import '../../screens/details_screen.dart';
-import '../../screens/home_screen.dart';
 import '../../styles/colours.dart';
 import '../../styles/constants.dart';
 import 'navbar_state.dart';
@@ -215,6 +214,18 @@ class NavbarCubit extends Cubit<NavbarState> {
         ),
       );
 
+  double totalRating = 0;
+  double tempSellerTotalRatings = 0;
+  reCalculateSellerRating({
+    required Bakery bakeryy,
+  }) {
+    for (int i = 0; i < PastOrders.length; i++) {
+      totalRating += PastOrders[i].rating;
+    }
+    tempSellerTotalRatings = totalRating / PastOrders.length;
+    bakeryy.ratingNum = tempSellerTotalRatings;
+  }
+
   double rating = 0;
   Widget buildOrderRating() => RatingBar.builder(
       initialRating: 1,
@@ -341,8 +352,17 @@ class NavbarCubit extends Cubit<NavbarState> {
 
                                             PastOrders.add(Orders[index]);
                                             CurrentOrders.removeAt(index);
-                                            emit(NavbarTest());
 
+                                            // reCalculateSellerRating(
+                                            //   bakeryy: PastOrders[index]
+                                            //       .products[index]
+                                            //       .product
+                                            //       .bakeryy,
+                                            // );
+                                            emit(NavbarTest());
+                                            reCalculateSellerRating(
+                                              bakeryy: Etoile,
+                                            );
                                             Navigator.pop(context);
                                           },
                                         ),

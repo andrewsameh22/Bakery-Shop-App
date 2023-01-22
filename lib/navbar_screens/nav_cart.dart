@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../ResuableWidgets/default_button.dart';
 import '../business_logic/navbar/navbar_cubit.dart';
 import '../business_logic/navbar/navbar_state.dart';
-import '../models/product_model.dart';
 import '../models/product_tile.dart';
 import '../styles/colours.dart';
 import '../styles/constants.dart';
@@ -44,7 +42,7 @@ class NavCart extends StatelessWidget {
                         child: Text(
                           'Your Cart is empty',
                           style: TextStyle(
-                              fontSize: 36,
+                              fontSize: 32,
                               color: primaryColor,
                               fontWeight: FontWeight.bold),
                         ),
@@ -64,14 +62,6 @@ class NavCart extends StatelessWidget {
                               );
                             }),
                       ),
-                      // Text(
-                      //   'Total: ' + cubit.totalprice.toString() + '\$',
-                      //   style: TextStyle(
-                      //     color: Colors.black,
-                      //     fontWeight: FontWeight.bold,
-                      //     fontSize: 32,
-                      //   ),
-                      // ),
                       defaultButton(
                         text: 'Proceed To Pay',
                         onpressed: () {

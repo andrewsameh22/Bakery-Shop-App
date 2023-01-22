@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../styles/colours.dart';
+import 'bakery_model.dart';
 
 var randomColor = (Colours..shuffle()).first;
 int randomIndex = Random().nextInt(Colours.length);
@@ -10,7 +11,7 @@ int randomIndex = Random().nextInt(Colours.length);
 class Product {
   final String image, title, description, type;
   final String bakeryName;
-  // final Bakery bakery;
+  // final Bakery bakeryy;
   final int price;
   Color color = Colours[Random().nextInt(Colours.length)];
   Product({
@@ -20,7 +21,7 @@ class Product {
     required this.price,
     required this.description,
     required this.bakeryName,
-    // required this.bakery,
+    // required this.bakeryy,
   });
 }
 
@@ -59,6 +60,18 @@ Iterable<Product> MonginiProducts =
 Iterable<Product> ExceptionProducts =
     products.where((element) => element.bakeryName == 'Exception');
 
+// List<Product> products = [
+//   Product(
+//     bakeryy: Etoile,
+//     bakeryName: 'Etoile',
+//     type: 'bread',
+//     title: "Bread",
+//     price: 2,
+//     description:
+//         "a yeast-raised bread made of dough containing water and distinguished by its thick, well-browned crust, usually made in long, slender, tapered loaves.",
+//     image: 'assets/images/base/bread.jpg',
+//   ),
+// ];
 List<Product> products = [
   Product(
     // bakery: Etoile,
@@ -260,7 +273,6 @@ List<Product> products = [
         "a thin, flat, usually round cake made from a mixture of flour, milk, and egg that is fried on both sides and usually eaten for breakfast with strawberry.",
     image: "assets/images/pancakes/strawberryPancake.jpg",
   ),
-
   Product(
     // bakery: Mongini,
     bakeryName: 'Mongini',
