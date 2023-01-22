@@ -1,5 +1,4 @@
 import 'package:bakery_shop_application/models/product_model.dart';
-import 'package:flutter/material.dart';
 
 class CartModel {
   Product product;

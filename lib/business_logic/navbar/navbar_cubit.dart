@@ -234,8 +234,11 @@ class NavbarCubit extends Cubit<NavbarState> {
                           style: TextStyle(
                             color: primaryColor,
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.005,
                         ),
                         Text(
                           '${Orders[index].products[0].product.title} and other items...',
@@ -246,6 +249,9 @@ class NavbarCubit extends Cubit<NavbarState> {
                             fontSize: 16,
                           ),
                         ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.005,
+                        ),
                         Text(
                           Orders[index].products.length.toString() + ' items',
                           style: TextStyle(
@@ -253,6 +259,9 @@ class NavbarCubit extends Cubit<NavbarState> {
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.005,
                         ),
                         Text(
                           'Total Order Price: \$' +
