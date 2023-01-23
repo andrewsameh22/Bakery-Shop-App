@@ -6,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../ResuableWidgets/TXTFld.dart';
+import '../../ResuableWidgets/def_icon_button.dart';
 import '../../ResuableWidgets/default_button.dart';
 import '../../business_logic/login/login_cubit.dart';
 import '../../business_logic/login/login_state.dart';
@@ -27,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   TextEditingController passwordController = TextEditingController();
 
-  bool isPass = true;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -79,15 +79,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           return null;
                         },
                         label: 'Password',
-                        isPassword: isPass,
+                        isPassword: cubit.visiblePassword,
                         sicon: IconButton(
                           onPressed: () {
-                            setState(() {
-                              isPass = !isPass;
-                            });
+                            cubit.changePasswordVisibility();
                           },
                           icon: Icon(
-                            isPass ? Icons.visibility_off : Icons.visibility,
+                            cubit.visiblePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
                             color: primaryColor,
                           ),
                         ),
@@ -95,16 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.01,
                       ),
-                      // TextButton(
-                      //   onPressed: () {},
-                      //   child: Text(
-                      //     'Forgot Password?',
-                      //     style: TextStyle(
-                      //         fontSize: 14,
-                      //         color: primaryColor,
-                      //         decoration: TextDecoration.underline),
-                      //   ),
-                      // ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.015,
                       ),

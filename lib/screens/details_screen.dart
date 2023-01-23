@@ -177,57 +177,59 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       children: [
                                         Row(
                                           children: <Widget>[
-                                            MaterialButton(
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  border: Border.all(
-                                                      color:
-                                                          widget.product.color,
-                                                      width: 2),
-                                                ),
-                                                child: Icon(Icons.remove),
+                                            TestButton(
+                                              color: widget.product.color,
+                                              icon: Icon(
+                                                Icons.remove,
                                               ),
-                                              onPressed: () {
-                                                // cubit.numOfItems--;
-                                                // cubit.emit(SelectmealDecrementItem());
+                                              onpressed: () {
                                                 cubit.decnum();
+                                                // cubit.numOfItems++;
+                                                cubit.emit(NavbarTest());
                                               },
                                             ),
                                             Padding(
                                               padding:
                                                   const EdgeInsets.symmetric(
-                                                      horizontal: 20.0 / 2),
+                                                horizontal: 10.0,
+                                              ),
                                               child: Text(
                                                 // if our item is less  then 10 then  it shows 01 02 like that
-                                                cubit.numOfItems
-                                                    .toString()
-                                                    .padLeft(2, "0"),
+                                                cubit.numOfItems.toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .headline6,
                                               ),
                                             ),
-                                            MaterialButton(
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(12),
-                                                  border: Border.all(
-                                                      color:
-                                                          widget.product.color,
-                                                      width: 2),
-                                                ),
-                                                child: Icon(Icons.add),
+                                            // MaterialButton(
+                                            //   child: Container(
+                                            //     decoration: BoxDecoration(
+                                            //       color: Colors.white,
+                                            //       borderRadius:
+                                            //           BorderRadius.circular(12),
+                                            //       border: Border.all(
+                                            //           color:
+                                            //               widget.product.color,
+                                            //           width: 2),
+                                            //     ),
+                                            //     child: Icon(Icons.add),
+                                            //   ),
+                                            //   onPressed: () {
+                                            //     // setState(() {
+                                            //     cubit.numOfItems++;
+                                            //     cubit.emit(NavbarTest());
+                                            //     // });
+                                            //   },
+                                            // ),
+                                            TestButton(
+                                              color: widget.product.color,
+                                              icon: Icon(
+                                                Icons.add,
                                               ),
-                                              onPressed: () {
-                                                // setState(() {
-                                                cubit.numOfItems++;
+                                              onpressed: () {
+                                                cubit.incnum();
+                                                // cubit.numOfItems++;
                                                 cubit.emit(NavbarTest());
-                                                // });
                                               },
                                             ),
                                           ],
@@ -472,3 +474,20 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 }
+
+Widget TestButton({
+  required onpressed,
+  required Color color,
+  required Icon icon,
+}) =>
+    MaterialButton(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+        ),
+        child: icon,
+      ),
+      onPressed: onpressed,
+    );

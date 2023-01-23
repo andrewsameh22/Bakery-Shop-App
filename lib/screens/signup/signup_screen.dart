@@ -23,9 +23,6 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  bool isPass = true;
-  bool reisPass = true;
-
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -100,7 +97,7 @@ class _SignUpState extends State<SignUp> {
                   TxtFld(
                     controller: cubit.passwordController,
                     label: 'Password',
-                    isPassword: isPass,
+                    isPassword: cubit.visiblePassword,
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'please enter your password';
@@ -109,12 +106,12 @@ class _SignUpState extends State<SignUp> {
                     },
                     sicon: IconButton(
                       onPressed: () {
-                        setState(() {
-                          isPass = !isPass;
-                        });
+                        cubit.changePasswordVisibility();
                       },
                       icon: Icon(
-                        isPass ? Icons.visibility_off : Icons.visibility,
+                        cubit.visiblePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                         color: primaryColor,
                       ),
                     ),
@@ -125,7 +122,7 @@ class _SignUpState extends State<SignUp> {
                   TxtFld(
                     controller: cubit.confirmPasswordController,
                     label: 'Confirm Your Password',
-                    isPassword: reisPass,
+                    isPassword: cubit.visibleConfirmPassword,
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'please enter your email address';
@@ -136,12 +133,12 @@ class _SignUpState extends State<SignUp> {
                     },
                     sicon: IconButton(
                       onPressed: () {
-                        setState(() {
-                          reisPass = !reisPass;
-                        });
+                        cubit.changeConfirmPasswordVisibility();
                       },
                       icon: Icon(
-                        reisPass ? Icons.visibility_off : Icons.visibility,
+                        cubit.visibleConfirmPassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                         color: primaryColor,
                       ),
                     ),

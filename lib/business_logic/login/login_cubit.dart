@@ -11,7 +11,7 @@ class LoginCubit extends Cubit<LoginState> {
   static LoginCubit get(context) => BlocProvider.of(context);
   final GlobalKey<FormState> loginKey = GlobalKey<FormState>();
 
-  bool visiblePassword = false;
+  bool visiblePassword = true;
 
   void changePasswordVisibility() {
     visiblePassword = !visiblePassword;

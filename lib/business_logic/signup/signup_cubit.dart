@@ -28,8 +28,8 @@ class SignupCubit extends Cubit<SignupState> {
 
   final GlobalKey<FormState> signupKey = GlobalKey<FormState>();
 
-  bool visiblePassword = false;
-  bool visibleConfirmPassword = false;
+  bool visiblePassword = true;
+  bool visibleConfirmPassword = true;
 
   // function to change visibility of password
   void changePasswordVisibility() {

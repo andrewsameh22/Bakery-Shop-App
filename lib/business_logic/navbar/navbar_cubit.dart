@@ -56,9 +56,7 @@ class NavbarCubit extends Cubit<NavbarState> {
   }
 
   void decnum() {
-    while (numOfItems > 1) {
-      numOfItems--;
-    }
+    numOfItems > 1 ? numOfItems-- : numOfItems = 1;
     emit(NavbarTest());
   }
 

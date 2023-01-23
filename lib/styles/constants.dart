@@ -1,13 +1,23 @@
+import 'package:flutter/material.dart';
 
 import '../models/cart_model.dart';
 import '../models/order_model.dart';
-
 
 // List<Product> CartProducts = [];
 List<CartModel> CartItems = [];
 List<OrderModel> CurrentOrders = [];
 List<OrderModel> PastOrders = [];
 
+// void navigateTo({
+//   Page Screen
+// }) {
+//   Navigator.push(
+//       context,
+//       MaterialPageRoute(
+//         builder: (context) =>Screen,
+//       ));
+//
+// }
 //Token Keys
 // String keyToken = 'token0';
 // String accessToken = "";
