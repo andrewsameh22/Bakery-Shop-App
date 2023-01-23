@@ -68,7 +68,7 @@ class NavbarCubit extends Cubit<NavbarState> {
     } else if (choice == PopItems.basic) {
       productCheck = 'basic';
       ActiveProductsList = basic;
-
+//asdfgh
       emit(NavbarTest());
     } else if (choice == PopItems.cheesecakes) {
       productCheck = 'cheesecake';
