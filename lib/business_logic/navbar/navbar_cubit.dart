@@ -316,7 +316,7 @@ class NavbarCubit extends Cubit<NavbarState> {
                         Text(
                           Orders[index].collected == false
                               ? 'Mark as collected'
-                              : 'Marked as collected',
+                              : 'Collected',
                           style: TextStyle(
                             fontSize: 12,
                           ),

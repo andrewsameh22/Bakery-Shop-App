@@ -208,3 +208,20 @@ Widget emptydefButton({
 //       ),
 //       onPressed: onpressed(),
 //     );
+
+Widget IcoBut({
+  required onpressed,
+  required Color color,
+  required Icon icon,
+}) =>
+    MaterialButton(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 2),
+        ),
+        child: icon,
+      ),
+      onPressed: onpressed,
+    );

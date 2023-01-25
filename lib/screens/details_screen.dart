@@ -177,7 +177,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                       children: [
                                         Row(
                                           children: <Widget>[
-                                            TestButton(
+                                            IcoBut(
                                               color: widget.product.color,
                                               icon: Icon(
                                                 Icons.remove,
@@ -201,27 +201,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                                     .headline6,
                                               ),
                                             ),
-                                            // MaterialButton(
-                                            //   child: Container(
-                                            //     decoration: BoxDecoration(
-                                            //       color: Colors.white,
-                                            //       borderRadius:
-                                            //           BorderRadius.circular(12),
-                                            //       border: Border.all(
-                                            //           color:
-                                            //               widget.product.color,
-                                            //           width: 2),
-                                            //     ),
-                                            //     child: Icon(Icons.add),
-                                            //   ),
-                                            //   onPressed: () {
-                                            //     // setState(() {
-                                            //     cubit.numOfItems++;
-                                            //     cubit.emit(NavbarTest());
-                                            //     // });
-                                            //   },
-                                            // ),
-                                            TestButton(
+                                            IcoBut(
                                               color: widget.product.color,
                                               icon: Icon(
                                                 Icons.add,
@@ -474,20 +454,3 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 }
-
-Widget TestButton({
-  required onpressed,
-  required Color color,
-  required Icon icon,
-}) =>
-    MaterialButton(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color, width: 2),
-        ),
-        child: icon,
-      ),
-      onPressed: onpressed,
-    );

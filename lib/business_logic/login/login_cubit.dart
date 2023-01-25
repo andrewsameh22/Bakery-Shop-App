@@ -11,16 +11,16 @@ class LoginCubit extends Cubit<LoginState> {
   static LoginCubit get(context) => BlocProvider.of(context);
   final GlobalKey<FormState> loginKey = GlobalKey<FormState>();
 
+  void resetPrefs() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('ClientType', 'Guest');
+    emit(LoginTest());
+  }
+
   bool visiblePassword = true;
 
   void changePasswordVisibility() {
     visiblePassword = !visiblePassword;
     emit(PasswordVisibilityState());
-  }
-
-  void resetPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString('ClientType', 'Guest');
-    emit(LoginTest());
   }
 }
